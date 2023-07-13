@@ -1,0 +1,99 @@
+.home__wrapper {
+  width: 100vw;
+  height: 100%;
+  background-color: rgb(29, 54, 92);
+  color: #fff;
+  display: flex;
+
+  .home {
+    display: flex;
+    flex-direction: row;
+    .home__leftSide {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 3.5em;
+      padding: 0 5.5em;
+      .home__headline {
+        font-size: 92px;
+        font-weight: 400;
+        font-family: "Baskervville", serif;
+      }
+      .home__paragraph {
+        width: 800px;
+        font-size: 22px;
+      }
+      .home__loginButton {
+        padding: 1.5em;
+        background-color: #00000069;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+    .home__rightSide {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      .home__cardImage, .home__cardImage--2 {
+        width: 700px;
+        height: auto;
+      }
+      .home__cardImage--2 {
+        position: absolute;
+        transform: rotate(50deg);
+
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .home__wrapper {  
+    .home {
+      display: flex;
+      flex-direction: column;
+      .home__leftSide {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4.5em;
+        padding: 1em 2.5em;
+        position: relative;
+        z-index: 3;
+        .home__headline {
+          font-size: 36px;
+          text-align: center;
+        }
+        .home__paragraph {
+          width: 100%;
+          font-size: 18px;
+          text-align: justify;
+        }
+        .home__loginButton {
+          background-color: #000000cb;
+        }
+      }
+      .home__rightSide {
+        width: 100%;
+        position: absolute;
+        top: 25%;
+        .home__cardImage, .home__cardImage--2 {
+          width: 100%;
+          opacity: 0.5;
+        }
+        .home__cardImage--2 {
+          display: none;
+        }
+      }
+    }
+  }
+}

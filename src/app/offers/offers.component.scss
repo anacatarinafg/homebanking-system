@@ -1,0 +1,145 @@
+.offers__wrapper {
+
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 3.5em;
+  .offers__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    .offers__headline {
+      font-size: 52px;
+      font-weight: 400;
+    }
+    .offers__paragraph {
+      font-size: 18px;
+    }
+  }
+  .offers__plans {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2em;
+  }
+  .offers__plan {
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #cccccc;
+    color: #000;
+    font-weight: 500;
+    padding: 2em 3.5em;
+    &:nth-child(2) {
+      background-color: #363683;
+    }
+    &:nth-child(3) {
+      background-color: #a67b00;
+      color: #000 !important;
+    }
+    .offers__planOffer {
+    }
+    .offers__planInfo {
+    }
+    .offers__planPrice {
+      font-size: 36px;
+      text-align: center;
+    }
+    .offers__planList {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5em;
+      color: #dbdbdb;
+      .offers__planItem {
+        &:nth-last-child(n + 5) {
+          color: #000;
+        }
+      }
+    }
+  } 
+}
+
+// MOBILE
+
+
+
+
+@media (max-width: 768px) {
+  .offers__wrapper {
+
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 3.5em;
+    .offers__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 55px;
+      .offers__headline {
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center;
+      }
+      .offers__paragraph {
+        font-size: 18px;
+        text-align: justify;
+      }
+    }
+    .offers__plans {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2em;
+    }
+    .offers__plan {
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      font-weight: 500;
+      padding: 2em 3.5em;
+      margin-bottom: 55px;
+      &:nth-child(2) {
+        background-color: #a6a6a6;
+      }
+      &:nth-child(3) {
+        background-color: #a67b00;
+        color: #000 !important;
+      }
+      .offers__planOffer {
+      }
+      .offers__planInfo {
+      }
+      .offers__planPrice {
+        font-size: 22px;
+        text-align: center;
+      }
+      .offers__planList {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5em;
+        color: #dbdbdb;
+        .offers__planItem {
+          &:nth-last-child(n + 5) {
+            color: #000;
+          }
+        }
+      }
+    } 
+  }
+}

@@ -1,0 +1,33 @@
+<div class="withdraw__wrapper">
+  <div class="withdraw__headlines">
+    <h2>Withdraw</h2>
+    <span>Balance: ${{ balance }}</span> <!-- display the current balance using the 'balance' property -->
+  </div>
+  <hr />
+  <div class="withdraw__withdrawMoney">
+    <span>Enter the quantity you want to withdraw:</span>
+    <form [formGroup]="formWithdraw"> <!-- bind the form group to the 'formWithdraw' property -->
+      <label for="quantity" class="withdraw__label">Quantity:</label>
+      <input type="number" id="quantity" class="withdraw__input" formControlName="quantity" />
+      <!-- bind the input to the 'quantity' form control -->
+    </form>
+    <div *ngIf="
+        formWithdraw.get('quantity')?.invalid &&
+        formWithdraw.get('quantity')?.touched
+      "><!-- show error messages only if the 'quantity' control is invalid and touched -->
+      <div *ngIf="formWithdraw.get('quantity')?.errors?.['required']">
+        Quantity is required.
+      </div>
+      <div *ngIf="formWithdraw.get('quantity')?.errors?.['min']">
+        Quantity cannot be negative.
+      </div>
+      <div *ngIf="formWithdraw.get('quantity')?.errors?.['max']">
+        Withdraw amount cannot exceed $10,000.
+      </div>
+    </div>
+
+    <button class="withdraw__button" [disabled]="formWithdraw.invalid" (click)="withdraw()">
+      Withdraw: $ {{ formWithdraw.value.quantity }} <!-- display the withdrawal amount -->
+    </button>
+  </div>
+</div>

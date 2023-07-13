@@ -1,0 +1,26 @@
+<div class="movements__wrapper">
+  <div class="movements__headlines">
+    <h2>Movements</h2>
+    <span>Balance: ${{ getBalance() }}</span>
+    <!-- display the current bal using the 'getBalance()' method -->
+  </div>
+
+  <hr />
+
+  <div class="movements">
+    <ul class="movements__list">
+      <li class="movements__item" *ngFor="let movement of movements">
+        <span>{{ movement.type }}</span
+        >: ${{ movement.amount }}
+        <!-- display each movement type(deposit or withdrawal) and amount -->
+      </li>
+    </ul>
+  </div>
+
+  <div class="movements__clearList">
+    <button class="movements__button" (click)="clearMovements()">
+      Erase movements
+    </button>
+    <!-- button to clear the movements list -->
+  </div>
+</div>
