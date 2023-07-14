@@ -34,13 +34,14 @@
     justify-content: center;
     flex-direction: column;
     padding: 0 0;
+    gap: 1em;
+    border-bottom: 1px solid #000;
     .navbar__logotype {
-      font-weight: 500;
+      font-weight: 700;
     }
     .navbar__list {
       display: flex;
       gap: 25px;
-      display: none;
 
       .navbar__item {
         font-weight: 500;

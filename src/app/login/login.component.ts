@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -32,8 +33,9 @@ import { Component } from '@angular/core';
               name="name"
               #nameInput="ngModel"
               required
-            /> <!-- bind the "name" variable to the input value using ngModel -->
-            <div 
+            />
+            <!-- bind the "name" variable to the input value using ngModel -->
+            <div
               class="input__error"
               *ngIf="nameInput.invalid && nameInput.touched"
             >
@@ -48,7 +50,8 @@ import { Component } from '@angular/core';
               name="email"
               #emailInput="ngModel"
               required
-            /> <!-- bind the "email" variable to the input value using ngModel -->
+            />
+            <!-- bind the "email" variable to the input value using ngModel -->
             <div
               class="input__error"
               *ngIf="emailInput.invalid && emailInput.touched"
@@ -65,7 +68,8 @@ import { Component } from '@angular/core';
               name="password"
               #passwordInput="ngModel"
               required
-            /> <!-- bind the "password" variable to the input value using ngModel -->
+            />
+            <!-- bind the "password" variable to the input value using ngModel -->
             <div
               class="input__error"
               *ngIf="passwordInput.invalid && passwordInput.touched"
@@ -76,14 +80,13 @@ import { Component } from '@angular/core';
 
           <!--  -->
           <div>
-            <button
-              type="submit"
-              value="Log in"
+            <a
+              routerLink="/dashboard"
               class="form__login"
-              [disabled]="contactForm.invalid"
-            > <!-- disable the button if the form is invalid -->
+              (click)="submitForm()"
+            >
               Log in
-            </button>
+            </a>
           </div>
         </form>
       </div>
@@ -96,14 +99,14 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    // Initialization code or logic can be placed here
   }
 
   submitForm() {
-    const message = `My name is ${this.name}. My email is ${this.email}. My password is ${this.password}.`;
-    alert(message); // display an alert with the entered form values
+    this.userService.name = this.name; // set the name value in the UserService
+    this.userService.email = this.email; // set the email value
+    this.userService.password = this.password; // set the password value
   }
 }

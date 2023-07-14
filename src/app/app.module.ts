@@ -18,6 +18,7 @@ import { DepositComponent } from './deposit/deposit.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { MovementsService } from './movements-service.service';
 import { BalanceService } from './balance-service.service';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { BalanceService } from './balance-service.service';
   ],
   providers: [
     MovementsService, // provide the MovementsService globally within the app
-    BalanceService // provide the BalanceService globally within the appp
+    BalanceService, // // 
+    UserService, // // 
   ],
   bootstrap: [AppComponent]
 })
