@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -80,13 +81,9 @@ import { UserService } from '../user.service';
 
           <!--  -->
           <div>
-            <a
-              routerLink="/dashboard"
-              class="form__login"
-              (click)="submitForm()"
-            >
+            <button type="submit" class="form__login" (click)="submitForm()">
               Log in
-            </a>
+            </button>
           </div>
         </form>
       </div>
@@ -99,14 +96,25 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   submitForm() {
+    if (
+      this.name.trim() === '' ||
+      this.email.trim() === '' ||
+      this.password.trim() === ''
+    ) {
+      alert('Please, enter your name, email and password.');
+      return;
+    }
+
     this.userService.name = this.name; // set the name value in the UserService
     this.userService.email = this.email; // set the email value
     this.userService.password = this.password; // set the password value
+
+    // redirect to the dashboard
+    this.router.navigateByUrl('/dashboard');
   }
 }

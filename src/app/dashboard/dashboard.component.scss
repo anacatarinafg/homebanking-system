@@ -8,7 +8,7 @@
     width: 85%;
     height: 80vh;
     margin: auto;
-    background-color: #b6b6b6;
+    background-color: #d3d3d3;
     color: #000;
     border-radius: 15px;
     display: flex;
@@ -59,7 +59,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1288px) {
   .dashboard__wrapper {
     width: 100vw;
     height: 100%;
