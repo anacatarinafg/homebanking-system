@@ -40,7 +40,6 @@
     }
     &:nth-child(3) {
       background-color: #a67b00;
-      color: #000 !important;
     }
     .offers__planOffer {
     }
@@ -55,12 +54,6 @@
       align-items: center;
       flex-direction: column;
       gap: 0.5em;
-      color: #dbdbdb;
-      .offers__planItem {
-        &:nth-last-child(n + 5) {
-          color: #000;
-        }
-      }
     }
   }
 }
@@ -109,13 +102,7 @@
       font-weight: 500;
       padding: 2em 3.5em;
       margin-bottom: 55px;
-      &:nth-child(2) {
-        background-color: #a6a6a6;
-      }
-      &:nth-child(3) {
-        background-color: #a67b00;
-        color: #000 !important;
-      }
+
       .offers__planOffer {
       }
       .offers__planInfo {
@@ -129,12 +116,6 @@
         align-items: center;
         flex-direction: column;
         gap: 0.5em;
-        color: #dbdbdb;
-        .offers__planItem {
-          &:nth-last-child(n + 5) {
-            color: #000;
-          }
-        }
       }
     }
   }
