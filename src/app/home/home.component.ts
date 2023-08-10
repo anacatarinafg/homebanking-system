@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
             class="home__loginButton"
             (click)="redirectToOtherPage()"
           > <!-- call the 'redirectToOtherPage()' method when the button is clicked -->
-            Go to my account
+            Login
           </button>
         </div>
         <div class="home__rightSide">
